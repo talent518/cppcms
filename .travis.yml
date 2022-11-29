@@ -1,0 +1,12 @@
+language: cpp
+
+os:
+    - osx
+    - linux
+
+compiler:
+    - gcc
+    - clang
+
+script:
+    - mkdir build && cd build && cmake -DBOOSTER_AIO_HAVE_PF_INET6=OFF -DDISABLE_STATIC=ON .. && make && CTEST_OUTPUT_ON_FAILURE=1 ctest
